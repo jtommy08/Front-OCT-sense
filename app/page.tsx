@@ -1,103 +1,173 @@
-import Image from "next/image";
+import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <div className="container">
+        {/* Header */}
+        <header className="header">
+          <Link href="/" className="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7 21C5.89543 21 5 20.1046 5 19V14.6569C5 13.5998 5.42143 12.5855 6.17157 11.8284L12.4142 5.58579C13.1953 4.80474 14.4558 4.80474 15.2368 5.58579C16.0179 6.36683 16.0179 7.62728 15.2368 8.40833L10.2368 13.4083C9.84628 13.7988 9.21312 13.7988 8.82259 13.4083C8.43207 13.0178 8.43207 12.3846 8.82259 11.9941L13.1161 7.7006"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M11 15H15C17.2091 15 19 16.7909 19 19V19C19 20.1046 18.1046 21 17 21H11"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span>OCTsense</span>
+          </Link>
+          <nav className="nav">
+            <Link href="/" className="nav-link">
+              Inicio
+            </Link>
+            <Link href="/carga" className="nav-link">
+              Carga
+            </Link>
+            <Link href="/analisis" className="nav-link">
+              Análisis
+            </Link>
+            <Link href="/informe" className="nav-link">
+              Informe
+            </Link>
+          </nav>
+          <Link href="/perfil" className="nav-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </Link>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <main>
+          {/* Hero Section */}
+          <div className="hero">
+            <h1 className="hero-title">Optimiza tu práctica oftalmológica con OCTsense</h1>
+            <p className="hero-text">
+              Un sistema avanzado de detección en imágenes OCT basado en inteligencia artificial. Nuestro objetivo es
+              facilitar la detección temprana de patologías oculares, proporcionando herramientas para un diagnóstico
+              más preciso y eficiente.
+            </p>
+          </div>
+
+          {/* Bloques inferiores */}
+          <div className="grid">
+            {/* Historial de cambios */}
+            <div className="card">
+              <h2 className="card-title">Historial de cambios</h2>
+              <ul className="list">
+                <li className="list-item">
+                  <span className="list-item-bullet">•</span>
+                  <span>amet, consectetur adipiscing elit.</span>
+                </li>
+                <li className="list-item">
+                  <span className="list-item-bullet">•</span>
+                  <span>Suspendisse tortor lorem, ultrices ac auctor</span>
+                </li>
+                <li className="list-item">
+                  <span className="list-item-bullet">•</span>
+                  <span>ut, lacinia et nunc. Aliquam volutpat laore</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Guía interactiva */}
+            <div>
+              <h2 className="features-title">Guía interactiva</h2>
+              <div className="features-grid">
+                {/* Carga */}
+                <div className="feature-card">
+                  <div className="feature-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                  </div>
+                  <h3 className="feature-title">Carga</h3>
+                  <p className="feature-text">y gestión de imágenes de manera rápida y segura.</p>
+                </div>
+
+                {/* Análisis */}
+                <div className="feature-card">
+                  <div className="feature-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                      <line x1="9" y1="8" x2="9" y2="16"></line>
+                      <line x1="15" y1="8" x2="15" y2="16"></line>
+                      <line x1="9" y1="12" x2="15" y2="12"></line>
+                    </svg>
+                  </div>
+                  <h3 className="feature-title">Análisis</h3>
+                  <p className="feature-text">asistido por IA para obtener prediagnósticos confiables.</p>
+                </div>
+
+                {/* Informe */}
+                <div className="feature-card">
+                  <div className="feature-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <h3 className="feature-title">Informe</h3>
+                  <p className="feature-text">detallado donde se exponen los resultados del análisis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-  );
+  )
 }
+
